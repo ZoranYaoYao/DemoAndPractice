@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Zqs_String_Stitching</string>
+    <string name="hello_use_chinese">你好啊</string>
+    <string name="test_alt_enter">测试Alt + Enter</string>
+    <string name="plateform_subsidy_int">平台奖励%1$d元</string>
+    <string name="plateform_subsidy_float">平台奖励%1$2.2f元</string>
+</resources>

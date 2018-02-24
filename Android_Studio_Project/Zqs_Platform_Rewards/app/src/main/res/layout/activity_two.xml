@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/ll_extra_info"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:id="@+id/ll_taxi_ride_info"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:background="@color/color_f5f5f5">
+
+            <TextView
+                android:id="@+id/tv_first"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+            
+            <TextView
+                android:id="@+id/line_first"
+                android:layout_width="0.5dp"
+                android:layout_height="26dp"
+                android:background="@color/color_d8d8d8"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_second"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/line_second"
+                android:layout_width="0.5dp"
+                android:layout_height="26dp"
+                android:background="@color/color_d8d8d8"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_third"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>
