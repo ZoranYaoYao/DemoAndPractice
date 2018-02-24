@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.example.zoran.zqs_databinding_study.basic.User"/>
+
+        <variable
+            name="user"
+            type="User"/>
+        
+        <variable
+            name="listener"
+            type="com.example.zoran.zqs_databinding_study.include.SingleClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_textinput"
+            layout="@layout/layout_input"/>
+
+        <include
+            layout="@layout/layout_user"
+            bind:user="@{user}"/>
+
+        <include
+            layout="@layout/layout_btn_ok"
+            bind:listener="@{listener}"/>
+    </LinearLayout>
+</layout>
