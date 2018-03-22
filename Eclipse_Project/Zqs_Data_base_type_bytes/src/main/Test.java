@@ -39,5 +39,8 @@ public class Test {
 //		byte[] byte3 = str.getBytes("GBK"); //[-42, -48, -71, -6, 97, 98, 99]
 //		System.out.println("String GBK 字节长度= "+ str.getBytes("GBK").length);
 		
+		byte a = -100; byte b = 127;
+		byte c = (byte) (a - b);
+		System.out.println(c);
 	}
 }

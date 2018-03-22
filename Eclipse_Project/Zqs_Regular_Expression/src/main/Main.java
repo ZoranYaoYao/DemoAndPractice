@@ -3,6 +3,8 @@ package main;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.naming.InitialContext;
+
 /**
  *  rebase:
  *  	https://www.cnblogs.com/haodawang/p/5967219.html
@@ -15,10 +17,11 @@ import java.util.regex.Pattern;
 public class Main {
 	
 	public static void main(String[] args) {
-		Pattern pattern = Pattern.compile("\\[\\[([\\s\\S]*)\\]\\]");
-		Matcher matcher = pattern.matcher("你好，[[定位准确吗]]？我准备出发了。\\");
+		Pattern pattern = Pattern.compile("\\.");
+		Matcher matcher = pattern.matcher("a.b");
 		while(matcher.find()) {
 			System.out.println(matcher.group());
 		}
+		
 	}
 }

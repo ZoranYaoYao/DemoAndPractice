@@ -6,7 +6,6 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -48,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
         linearLayout = findViewById(R.id.linearlayout);
         fillMessage();
         //getRichString2();
+        int aaaa = 0;
+
     }
 
     /**
      * 富文本（使用"[ [ 高亮string ] ]"格式，例如：“你好，[[定位准确吗]]？我准备出发了。”）
      * */
-    private List<SpannableStringBuilder> getRichString() {
+    private List<SpannableStringBuilder> getRichString(int a) {
         List<SpannableStringBuilder> exchangeList = new ArrayList<>();
         String[] forwardBrackets;String[] afterBrackets;String highColorStr = null;
 
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             linearLayout.addView(tvMessage);
         }
     }
+
 
     private SpannableStringBuilder getRichString() {
         String str = "你好，[[定位准确吗]]？我准备[[出发]]了。";
