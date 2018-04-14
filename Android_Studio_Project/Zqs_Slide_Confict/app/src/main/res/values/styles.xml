@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <declare-styleable name="SlideSwitchButton">
+        <attr name="background_color" format="color" />
+        <attr name="slide_color" format="color" />
+        <attr name="tab_text_color" format="color" />
+        <attr name="tab_selected_text_color" format="color" />
+        <attr name="tab_text_size" format="dimension" />
+        <attr name="cornor_radius" format="dimension" />
+        <attr name="tab_index" format="integer" />
+        <attr name="stroke_width" format="float" />
+        <attr name="stroke_color" format="color" />
+    </declare-styleable>
+
+    <!--订单设置-->
+    <style name="monitor_setting_title_level_one">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/color_333333</item>
+    </style>
+
+    <style name="monitor_setting_title_level_sub">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/color_b3b3b3</item>
+    </style>
+
+</resources>

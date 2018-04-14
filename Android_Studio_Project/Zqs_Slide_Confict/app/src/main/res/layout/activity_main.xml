@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zqs.slideconfict.MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_one"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="hello"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Hello"/>
+
+            <!--听单半径-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_monitor_scope"
+                    style="@style/monitor_setting_title_level_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="听单半径" />
+
+                <com.zqs.slideconfict.SlideSwitchButton
+                    android:id="@+id/btn_order_scope"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/tv_monitor_scope"
+                    android:layout_marginTop="14dp"
+                    app:background_color="@color/color_f2f2f2"
+                    app:cornor_radius="20dp"
+                    app:slide_color="@color/color_f8b442"
+                    app:stroke_color="@color/color_e9e9e9"
+                    app:stroke_width="1"
+                    app:tab_selected_text_color="@color/color_333333"
+                    app:tab_text_color="@color/color_848484"
+                    app:tab_text_size="17sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Hello"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Hello"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
