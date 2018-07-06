@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
     public void openDynamicVariables(View view) {
         startActivity(new Intent(this, DynamicActivity.class));
     }
-//
-//    public void openAttributeSetters(View view) {
-//        startActivity(new Intent(this, AttributeSettersActivity.class));
-//    }
-//
+
+    public void openAttributeSetters(View view) {
+        //startActivity(new Intent(this, AttributeSettersActivity.class));
+    }
+
     public void openConverters(View view) {
         startActivity(new Intent(this, ConversionsActivity.class));
     }

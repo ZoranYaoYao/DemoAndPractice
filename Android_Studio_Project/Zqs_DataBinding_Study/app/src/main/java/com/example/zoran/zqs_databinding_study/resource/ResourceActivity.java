@@ -33,6 +33,6 @@ public class ResourceActivity extends BaseActivity {
         binding.setFirsName("Zhu");
         binding.setLastName("Shanyao");
         binding.setBananaCount(50);
-        binding.setOrangeCount(0);
+        binding.setOrangeCount(33);
     }
 }

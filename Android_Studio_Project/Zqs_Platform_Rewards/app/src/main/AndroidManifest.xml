@@ -14,6 +14,10 @@
         </activity>
 
         <activity android:name=".SecondActivity">
+
+        </activity>
+
+        <activity android:name=".ThirdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

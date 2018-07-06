@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data class=".order.BidSuccessDialogBinding">
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+        <import type="com.zqs.dida.DisplayUtil"/>
+
+
+        <variable
+            name="dialog"
+            type="com.zqs.dida.BidSuccessDialog"/>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ffffff_corner_r7"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:background="@drawable/img_bid_success_chengxing_bg_orange_all"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="抢单成功"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_ffe79c1e"
+                android:textSize="22sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_bid_success_copywriting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="21dp"
+                android:textColor="@color/color_333333"
+                android:textSize="20sp"
+                android:visibility="@{TextUtils.isEmpty(dialog.bid_message) ? View.GONE : View.VISIBLE}"
+                />
+
+            <TextView
+                android:id="@+id/tv_beat_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:text="@{dialog.defeatDriverSsb}"
+                android:textColor="@color/color_333333"
+                android:textSize="20sp"
+                android:visibility="@{TextUtils.isEmpty(dialog.defeatDriverSsb) ? View.GONE : View.VISIBLE}"
+                />
+
+            <TextView
+                android:id="@+id/bid_default_tips"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="成为橙星司机、参与推荐乘客活动即可享受抢单优先特权"
+                android:textColor="@color/color_b3b3b3"
+                android:textSize="16sp"
+                android:visibility="@{dialog.orange_star_status == 1 || !TextUtils.isEmpty(dialog.bid_message) ? View.GONE : View.VISIBLE}"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"/>
+
+    </LinearLayout>
+
+</layout>

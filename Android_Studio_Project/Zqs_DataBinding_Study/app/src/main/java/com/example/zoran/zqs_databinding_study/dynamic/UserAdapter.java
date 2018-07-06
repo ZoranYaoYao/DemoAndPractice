@@ -46,7 +46,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     }
 
     class UserViewHolder extends RecyclerView.ViewHolder {
-        private RecycleItemUserBinding mBinding;
+        private RecycleItemUserBinding mBinding; //bind 用于绑定xml的, 并且通过mBinding 获取xml里面的id对象
 
         public UserViewHolder(View itemView) {
             super(itemView);

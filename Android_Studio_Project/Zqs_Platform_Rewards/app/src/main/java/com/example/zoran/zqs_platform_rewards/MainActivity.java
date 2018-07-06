@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 如果我们想要一个GridView形式的RecyclerView，那么在LayoutManager上我们就要使用GridLayoutManager
         // 实例化一个GridLayoutManager，列数为3
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
         mExtraInfoView.setLayoutManager(layoutManager);
 
         mExraInfoAdapter = new CommonRecyclerViewAdapter(mDataList,this);

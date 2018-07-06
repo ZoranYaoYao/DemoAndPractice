@@ -17,7 +17,7 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <View
-            android:background="@{isError.get() ? @color/red : @color/white}"
+            android:background="@{isError ? @color/red : @color/white}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_height="@{height}"/>
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="ToogleExchange"
-            android:background="@android:color/black"
+            android:background="@android:color/holo_blue_dark"
             android:text="@{isError ? @string/red : @string/white}"/>
 
     </LinearLayout>
