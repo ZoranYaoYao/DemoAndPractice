@@ -46,7 +46,7 @@ public class ThirdActivity extends AppCompatActivity {
 
         // 如果我们想要一个GridView形式的RecyclerView，那么在LayoutManager上我们就要使用GridLayoutManager
         // 实例化一个GridLayoutManager，列数为3
-        CustomGridLayoutManager layoutManager = new CustomGridLayoutManager(this, 3);
+        NoScrollGridLayoutManager layoutManager = new NoScrollGridLayoutManager(this, 3);
         layoutManager.setScrollEnabled(false);
         mExtraInfoView.setLayoutManager(layoutManager);
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
@@ -57,10 +57,10 @@ public class ThirdActivity extends AppCompatActivity {
         mExtraInfoView.setAdapter(mExraInfoAdapter);
     }
 
-    public class CustomGridLayoutManager extends GridLayoutManager {
+    public class NoScrollGridLayoutManager extends GridLayoutManager {
         private boolean isScrollEnabled = true;
 
-        public CustomGridLayoutManager(Context context,int spanCount) {
+        public NoScrollGridLayoutManager(Context context, int spanCount) {
             super(context,spanCount);
         }
 

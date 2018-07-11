@@ -1,7 +1,6 @@
 package com.example.zoran.zqs_platform_rewards;
 
 import android.text.SpannableStringBuilder;
-import android.widget.TextView;
 
 /**
  * Created by Zoran on 2018/1/26.
@@ -33,7 +32,7 @@ public class TaxiRideExtraInfo extends CommonRecyclerViewAdapter.IItem {
 
     @Override
     public int getLayout() {
-        return R.layout.gridview_extra_info_item_first;
+        return R.layout.gridview_extra_info_item;
     }
 
     @Override

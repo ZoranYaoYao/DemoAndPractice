@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addView(LinearLayout parent,String prefix,int money,Enum<Align> align) {
-        //LayoutInflater.from(this).inflate(R.layout.gridview_extra_info_item_first)
+        //LayoutInflater.from(this).inflate(R.layout.gridview_extra_info_item)
         String yuan = "元";
         String info = prefix + String.valueOf(money) + yuan;
         SpannableString infoSs = new SpannableString(info);
