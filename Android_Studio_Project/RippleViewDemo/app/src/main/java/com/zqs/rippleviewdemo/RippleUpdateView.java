@@ -93,15 +93,26 @@ public class RippleUpdateView extends View {
         mMaxRadius = w / 2;
     }
 
+    int count = 0;
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.e("zqs11", "onDraw() count = " + (++count));
         if (mRunning) {
             list.get(0).setRunning(true);
             drawRipple(canvas);
-            postInvalidateDelayed(40);
-
+//            postInvalidateDelayed(40);
+            //update
+            removeCallbacks(refreshRunnable);
+            postDelayed(refreshRunnable,40);
         }
     }
+
+    private Runnable refreshRunnable = new Runnable() {
+        @Override
+        public void run() {
+            postInvalidate();
+        }
+    };
 
     public void reset() {
         mRunning = false;
@@ -110,7 +121,7 @@ public class RippleUpdateView extends View {
             circle.setRunning(false);
             circle.paint.setAlpha(Circle.DEFAULT_ALPHA);
         }
-
+        removeCallbacks(refreshRunnable);
     }
 
     private void drawRipple(Canvas canvas) {

@@ -2,6 +2,7 @@ package com.zqs.rippleviewdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
                 view_ripple.stop();
                 tv_monitor_stop.setVisibility(View.GONE);
                 tv_monitor_start.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tv_monitor_stop.setVisibility(View.GONE);
+        tv_monitor_stop.post(new Runnable() {
+            @Override
+            public void run() {
+                int flag = tv_monitor_stop.getVisibility();
+                Log.e("zqs1", "tv_monitor_stop.post flag = " + flag);
             }
         });
     }
