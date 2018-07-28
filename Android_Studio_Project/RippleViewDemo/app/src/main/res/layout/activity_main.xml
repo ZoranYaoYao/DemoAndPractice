@@ -22,65 +22,70 @@
             android:scaleType="center"
             android:src="@drawable/icon_set_up"/>
 
-        <TextView
-            android:id="@+id/tv_monitor_start"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/color_f8b442"
-            android:gravity="center"
-            android:text="点击出车"
-            android:textColor="@color/color_333333"
-            android:textSize="23sp"/>
+            android:layout_height="match_parent">
 
-
-        <LinearLayout
-            android:id="@+id/ll_monitor_started"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/color_ff22252f"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="1dp"
+            <LinearLayout
+                android:id="@+id/ll_monitor_started"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/color_e9ebf5"/>
+                android:background="@color/color_ff22252f"
+                android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <com.zqs.rippleviewdemo.RippleUpdateView
-                    android:id="@+id/view_ripple"
-                    android:layout_width="match_parent"
+                <View
+                    android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    app:color="@color/color_E79C1E"
-                    app:count="3"/>
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/color_e9ebf5"/>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.zqs.rippleviewdemo.RippleUpdateViewAni
+                        android:id="@+id/view_ripple"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:color="@color/color_E79C1E"
+                        app:count="3"/>
+
+                    <TextView
+                        android:id="@+id/tv_monitor_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="出车中"
+                        android:textColor="@color/color_777c8b"
+                        android:textSize="24sp"/>
+                </FrameLayout>
+
 
                 <TextView
-                    android:id="@+id/tv_monitor_state"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tv_monitor_stop"
+                    android:layout_width="76dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
+                    android:background="@color/color_777c8b"
                     android:gravity="center"
-                    android:text="出车中"
-                    android:textColor="@color/color_777c8b"
+                    android:text="收车"
+                    android:textColor="@color/color_F5F5F9"
                     android:textSize="24sp"/>
-            </FrameLayout>
+            </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/tv_monitor_stop"
-                android:layout_width="76dp"
+            <com.zqs.rippleviewdemo.MoveTextView
+                android:id="@+id/tv_monitor_start"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/color_777c8b"
                 android:gravity="center"
-                android:text="收车"
-                android:textColor="@color/color_F5F5F9"
-                android:textSize="24sp"/>
-        </LinearLayout>
+                app:backColor="@color/color_f8b442"
+                app:text="点击出车"
+                app:textColor="#333333"
+                app:textSize="23sp"/>
+        </RelativeLayout>
+
     </LinearLayout>
 </RelativeLayout>

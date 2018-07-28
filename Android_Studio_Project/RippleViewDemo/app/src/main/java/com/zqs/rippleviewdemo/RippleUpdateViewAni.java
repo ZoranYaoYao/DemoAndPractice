@@ -5,9 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +18,9 @@ import java.util.List;
  * Created by herr.wang on 2017/10/16.
  * TODO any heavy operation on main thread will interrupt the animation.
  */
-public class RippleUpdateView extends View {
+public class RippleUpdateViewAni extends View {
 
-    private static final int STEP = 20;
+    private static final int STEP = 14;
 
     private int mRippleCount;
     private int mMaxRadius;
@@ -28,15 +30,15 @@ public class RippleUpdateView extends View {
     private boolean mRunning;
     private List<Circle> list = new ArrayList<>();
 
-    public RippleUpdateView(Context context) {
+    public RippleUpdateViewAni(Context context) {
         this(context, null);
     }
 
-    public RippleUpdateView(Context context, AttributeSet attrs) {
+    public RippleUpdateViewAni(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RippleUpdateView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RippleUpdateViewAni(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Ripple);
         mRippleCount = typedArray.getInt(R.styleable.Ripple_count, 1);
@@ -93,13 +95,21 @@ public class RippleUpdateView extends View {
         mMaxRadius = w / 2;
     }
 
+    int count = 0;
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.e("zqs11", "onDraw() count = " + (++count));
         if (mRunning) {
             list.get(0).setRunning(true);
             drawRipple(canvas);
+//            postInvalidateDelayed(40);
+            //update
             removeCallbacks(refreshRunnable);
-            postDelayed(refreshRunnable, 40);
+            postDelayed(refreshRunnable,40);
+        } else {
+            Paint paint = new Paint();
+            paint.setColor(getResources().getColor(R.color.color_ff22252f));
+            canvas.drawRect(0,0,mWidth,mHeight, paint);
         }
     }
 
@@ -117,7 +127,7 @@ public class RippleUpdateView extends View {
             circle.setRunning(false);
             circle.paint.setAlpha(Circle.DEFAULT_ALPHA);
         }
-        removeCallbacks(refreshRunnable);
+        postInvalidate();
     }
 
     private void drawRipple(Canvas canvas) {
@@ -135,11 +145,12 @@ public class RippleUpdateView extends View {
                             @Override
                             public void run() {
                                 mRunning = true;
-                                RippleUpdateView.this.postInvalidate();
+                                RippleUpdateViewAni.this.postInvalidate();
                             }
                         }, 2000);
                     }
                 } else {
+                    Log.e("zqs1", circle.name + ": alpha = " + circle.paint.getAlpha() + ": radius = " + circle.radius);
                     circle.paint.setAlpha(circle.paint.getAlpha());
                     canvas.drawCircle(mWidth / 2, mHeight / 2, circle.radius, circle.paint);
 
