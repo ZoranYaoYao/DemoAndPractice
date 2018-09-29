@@ -1,6 +1,7 @@
 package com.zqs.twoactivitylifeinteraction;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,12 @@ import android.view.View;
 public class FirstActivity extends AppCompatActivity {
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.e("zqs1", "FirstActivity excute --> onRestoreInstanceState");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
@@ -53,7 +60,7 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Log.e("zqs1", "FirstActivity excute --> onCreate");
+        Log.e("zqs1", "FirstActivity excute --> onCreate1");
     }
 
     @Override
@@ -85,6 +92,12 @@ public class FirstActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.e("zqs1", "FirstActivity excute --> onPause");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e("zqs1", "FirstActivity excute --> onSaveInstanceState");
     }
 
     @Override
